@@ -41,7 +41,7 @@
   .buttonBurger{
     @include focusVisible;
     @include mobile{
-      padding: 18px;
+      padding: em(18);
     }
     @include desktop{
       display: none;

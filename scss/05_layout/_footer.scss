@@ -1,3 +1,129 @@
 // 푸터 시작 --------------------------------------------------------------------- /
+// .footer {
+//   position: relative;
+//   color: #fff;
+//   background: #000;
+//   height: auto;
 
+//   &__inner {
+//     height: 250px;
+//   }
+
+//   &__logo {
+//     background: yellow;
+//     position: absolute;
+//     top: 40%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//   }
+//   @at-root .privacy {
+//     border-bottom: 1px solid #fff;
+//     // margin-bottom: em(100);
+//     padding: em(16);
+//     // height: em(50);
+//     &__list {
+//       @include flexbox($justify-content: space-between, $flex-wrap: wrap);
+//       @include desktop {
+//         @include boxFixed();
+//       }
+//     }
+//   }
+
+//   @at-root .address {
+//     display: block;
+//       padding-top: 50px;
+//   }
+
+//   @at-root .address,
+//     .copyright {
+//     padding: em(16);
+
+//     @include flexbox($justify-content: center, $flex-wrap: wrap);
+//     @include desktop {
+//       @include boxFixed();
+//     }
+//   }
+// }
+.footer {
+  background: $grayscaleBlack;
+  color: $grayscaleGray2;
+  font-size: rem(12px);
+  padding-bottom: em(30);
+  // 헤더 inner (740px) ---------------------------------------------------------- /
+  &__inner {
+    @include flexbox(column);
+    text-align: center;
+  }
+
+  // 푸터 로고 --------------------------------------------------------------------- /
+  &__logo {
+    @include autoMargin();
+    @include mobile {
+      width: 160px;
+      margin-top: em(25);
+    }
+    @include desktop {
+      width: 180px;
+      margin-top: em(30);
+    }
+    img {
+      @include responsiveMedia();
+    }
+  }
+}
+
+.privacy {
+  order: -1;
+  border-bottom: 1px solid rgba($grayscaleGray3, 0.5);
+  @include mobile {
+    padding: em(10), 0;
+  }
+  @include desktop {
+    padding: em(18) 0;
+  }
+  // 개인정보 목록 ----------------------------------------------------------------- /
+  &__list {
+    @include flexbox(row, center, center, wrap);
+    @include mobile {
+      justify-content: flex-start;
+    }
+  }
+  // 개인정보 목록 링크 ----------------------------------------------------------------- /
+  &__link {
+    @include focusVisible;
+    display: block;
+    padding: em(2) em(4);
+    margin: em(4);
+  }
+}
+
+// 주소 ----------------------------------------------------------------- /
+.address {
+  text-align: center;
+  margin-top: em(17);
+  line-height: 1.6;
+
+  &__content {
+    display: inline-block;
+    margin-bottom: em(5);
+    margin-right: em(11);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+// 저작권 정보 -------------------------------------------------------------------- /
+.copyright {
+    font-size: rem(11px);
+    line-height: 1.6;
+  
+    @include mobile{
+      margin-top: em(15);
+    }
+    @include desktop{
+      margin-top: em(20);
+    }
+  }
 // 푸터 종료 --------------------------------------------------------------------- /

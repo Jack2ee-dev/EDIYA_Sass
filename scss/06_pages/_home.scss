@@ -1,3 +1,39 @@
 // 이디야 홈(메인 페이지) 시작 ------------------------------------------------------------- /
+.promotion {
+  @at-root .iframe {
+      @include mobile {
+        width: 100%;
+        height: 100vw * 9 / 16;
+      }
+  }
 
+  &__wrapper {
+      background: yellow;
+  }
+
+  &Notice {
+      background: blue;
+      display: flex;
+      position: relative;
+  }
+
+  &Notice__title {
+      background: tomato;
+      display: inline-block;
+      width: em(100);
+
+  }
+
+  @at-root .buttonWrapper {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+  }
+
+  &News {
+      background: red;
+  }
+
+  
+}
 // 이디야 홈(메인 페이지) 종료 ------------------------------------------------------------------ /
